@@ -37,18 +37,18 @@ const Inicio=()=>{
             <Contenedor className="contenido">
                 <Listas>
                     <li>
-                    <h1><b>Servicios</b> de coches de alquiler </h1>
-                    <p>Encuentre la mejor tarifa de coche de alquiler <br/> posible. Compare tarifas en todo el mundo y ahorre hasta un 60% en ofertas de más de 1.053 empresas de alquiler de coches.</p>
+                    <Titulos className="contenido"><b>Servicios</b> de coches de alquiler </Titulos>
+                    <Parrafo className="portada">Encuentre la mejor tarifa de coche de alquiler <br/> posible. Compare tarifas en todo el mundo y ahorre hasta un 60% en ofertas de más de 1.053 empresas de alquiler de coches.</Parrafo>
                     </li>
                     <li><Imagenes className="iconos" src={icono1} alt="icono1"/>
-                    <h2>ubicación</h2>
+                    <Subtitulo className="contenido">UBICACION</Subtitulo>
                     </li>
                     <li><Imagenes className="iconos" src={icono2} alt="icono2"/>
-                    <h2>20+MOTOCICLETAS</h2>
+                    <Subtitulo className="contenido">20+MOTOCICLETAS</Subtitulo>
                     </li>
                     <li>
                     <Imagenes className="iconos" src={icono3} alt="icono3"/>
-                    <h2>Usuarios felices</h2>
+                    <Subtitulo className="contenido">USUARIOS FELICES</Subtitulo>
                     </li>
                 </Listas>
             </Contenedor>
@@ -105,9 +105,23 @@ const Contenedor = styled.section`
         background-position: center center;
         padding: 300px 0;
     }
+    &.contenido{
+        background-color: #000000;
+    }
 `
 const Titulos=styled.h1`
     &.portada{
+        font-size: 70px;
+        color: #FFFFFF;
+    }
+    &.contenido{
+        font-size: 40px;
+        color: #FFFFFF;
+    }
+`
+const Subtitulo=styled.h2`
+    &.contenido{
+        font-size: 15px;
         color: #FFFFFF;
     }
 `
@@ -123,7 +137,6 @@ const Listas=styled.ul
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    
     
 
     
