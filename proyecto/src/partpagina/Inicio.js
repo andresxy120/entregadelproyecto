@@ -27,7 +27,7 @@ const Inicio=()=>{
                 <Parrafo className="portada">Como propietario de una motocicleta, es su deber legal asegurarse de que <br/> esté en condiciones de circular y no represente un peligro para usted,<br/> los pasajeros, otros usuarios de la vía o el público en general.</Parrafo>
             </Contenedor>
             <Contenedor className="introduccion">
-                <Listas className="conten1">
+                <Listas>
                 <li><Imagenes className="imgportada" src={imgportada} alt=""/></li>
                 <li><Titulos>Hemos ampliado <br/>nuestros <br/><b>servicios para</b><br/><b>incluir</b> <br/> almacenamiento <br/>de <br/>motocicletas</Titulos></li>
                 <li><Imagenes className="imgportada1" src={imgportada1} alt=""/>
@@ -35,58 +35,60 @@ const Inicio=()=>{
                 </Listas>
             </Contenedor>
             <Contenedor className="contenido">
-                <ul>
+                <Listas>
                     <li>
                     <h1><b>Servicios</b> de coches de alquiler </h1>
                     <p>Encuentre la mejor tarifa de coche de alquiler <br/> posible. Compare tarifas en todo el mundo y ahorre hasta un 60% en ofertas de más de 1.053 empresas de alquiler de coches.</p>
                     </li>
-                    <li><img src={icono1} alt="icono1"/>
+                    <li><Imagenes className="iconos" src={icono1} alt="icono1"/>
                     <h2>ubicación</h2>
                     </li>
-                    <li><img src={icono2} alt="icono2"/>
+                    <li><Imagenes className="iconos" src={icono2} alt="icono2"/>
                     <h2>20+MOTOCICLETAS</h2>
                     </li>
                     <li>
-                    <img src={icono3} alt="icono3"/>
+                    <Imagenes className="iconos" src={icono3} alt="icono3"/>
                     <h2>Usuarios felices</h2>
                     </li>
-                </ul>
+                </Listas>
             </Contenedor>
             <Contenedor className="foto">
-                <section><img src={foto1} alt="foto1"/></section>
-                <section><img src={foto2} alt="foto2"/></section>
-                <section><img src={foto3} alt="foto3"/></section>
+                <section><Imagenes className="foto1" src={foto1} alt="foto1"/></section>
+                <section><Imagenes className="foto2" src={foto2} alt="foto2"/></section>
+                <section><Imagenes className="foto3" src={foto3} alt="foto3"/></section>
             </Contenedor>
             <Contenedor className="galeria">
                 <h1>Nuestra <b>Galería</b></h1>
-                <ul>
+                <Listas>
                     <li><img src={galeria1} alt="galeria1"/></li>
                     <li><img src={galeria2} alt="galeria2"/></li>
                     <li><img src={galeria3} alt="galeria3"/></li>
+                </Listas>
+                <Listas>
                     <li><img src={galeria4} alt="galeria4"/></li>
                     <li><img src={galeria5} alt="galeria5"/></li>
                     <li><img src={galeria6} alt="galeria6"/></li>
-                </ul>
+                </Listas>
                 <button>aprende mas</button>
             </Contenedor>
             <Contenedor>
                 <h1>Contáctenos</h1>
-                <ul>
-                    <li><img src={icono4} alt="icono4"/>
+                <Listas>
+                    <li><Imagenes className="iconos" src={icono4} alt="icono4"/>
                         <h1>Habla a</h1>
                         <h2>27 13 Lowe Haven</h2>
                     </li>
                     <li>
-                        <img src={icono5} alt="icono5"/>
+                        <Imagenes className="iconos" src={icono5} alt="icono5"/>
                         <h1>teléfono</h1>
                         <h2>111 343 43 43</h2>
                     </li>
                     <li>
-                        <img src={icono6} alt="icono6"/>
+                        <Imagenes className="iconos" src={icono6} alt="icono6"/>
                         <h1>correo electrónico</h1>
                         <h2>business@info.com</h2>
                     </li>
-                </ul>
+                </Listas>
             </Contenedor>
         </Contenedor>
         
@@ -117,11 +119,14 @@ const Parrafo=styled.p`
     
 `
 const Listas=styled.ul
-`   &.conten1{
-        display: flex;
-        justify-content: space-evenly;
-        list-style-type: none;
-    }
+`   
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    
+    
+
+    
     
 `
 const Imagenes=styled.img`
@@ -132,6 +137,22 @@ const Imagenes=styled.img`
     &.imgportada1{
         width: 300px;
         height: 300px;
+    }
+    &.foto1{
+        width: 300px;
+        height: 300px;
+    }
+    &.foto2{
+        width: 300px;
+        height: 300px;
+    }
+    &.foto3{
+        width: 300px;
+        height: 300px;
+    }
+    &.iconos{
+        width: 90px;
+        height: 90px;
     }
 `
  
