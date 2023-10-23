@@ -18,10 +18,12 @@ import galeria6 from './imagenes/galeria 6.jpg'
 import icono4 from './imagenes/hablar-burbuja.png'
 import icono5 from './imagenes/llamada-telefonica.png'
 import icono6 from './imagenes/correo-electronico.png'
+import Header from "./Header";
 const Inicio=()=>{
     return(
        
         <Contenedor className="principal">
+            <Header/>
             <Contenedor className="portada">
             <Titulos className="portada">SERVICIO COMPLETO DE MOTOCICLETAS</Titulos>
                 <Parrafo className="portada">Como propietario de una motocicleta, es su deber legal asegurarse de que <br/> esté en condiciones de circular y no represente un peligro para usted,<br/> los pasajeros, otros usuarios de la vía o el público en general.</Parrafo>
