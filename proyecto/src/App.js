@@ -1,7 +1,7 @@
 
 import './App.css';
-import Header from './partpagina/Header'
-import Inicio from './partpagina/Inicio';
+//import Header from './partpagina/Header'
+//import Inicio from './partpagina/Inicio';
 import Servicio from './partpagina/Servicio';
 function App() {
   return (
