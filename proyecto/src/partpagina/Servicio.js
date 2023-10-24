@@ -1,6 +1,22 @@
 import React  from "react";
 import apariencia from "styled-components";
 
+import imagene from './imgservicio/tecnico.jpg';
+import seguridad from './imgservicio/seguridad.jpg';
+import mantener from './imgservicio/mantenimiento.jpg';
+import imagen1 from './imgservicio/reparo1.jpg';
+import imagen2 from './imgservicio/reparo2.jpg';
+import imagen3 from './imgservicio/reparo3.jpg';
+import logo1 from './imgservicio/Yamaha.png';
+import logo2 from './imgservicio/Bajaj.png';
+import logo3 from './imgservicio/AKT.png';
+import logo4 from './imgservicio/Suzuki.png';
+import logo5 from './imgservicio/Honda.png';
+import logo6 from './imgservicio/Hero.png';
+import icono1 from './imgservicio/iconousua1.png';
+import icono2 from './imgservicio/iconousua2.png';
+import icono3 from './imgservicio/iconousua3.png';
+import final from './imgservicio/usuariofinal.jpg';
 const Servicio =()=>{
     return(
         <Contenedor className="principal">
@@ -21,7 +37,7 @@ const Servicio =()=>{
                     </Parrafo>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={imagene} alt="imagen1"/>
                     </li>
                 </Lista>
                
@@ -30,7 +46,7 @@ const Servicio =()=>{
                 </Titulo>
                 <Lista>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={mantener} alt="imagen2"/>
                         <Subtitulo>
                         Mantenimiento general
                         </Subtitulo>
@@ -48,7 +64,7 @@ const Servicio =()=>{
                         </Parrafo>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={seguridad} alt="imagen3"/>
                         <Subtitulo>
                             Seguridad y visibilidad
                         </Subtitulo>
@@ -76,7 +92,7 @@ const Servicio =()=>{
                 </Titulo>
                 <Lista>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={imagen1} alt="imagen4"/>
                     </li>
                     <li>
                         <Subtitulo>
@@ -89,7 +105,7 @@ const Servicio =()=>{
                         </Parrafo>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={imagen2} alt="imagen5"/>
                     </li>
                     <li>
                         <Subtitulo>
@@ -103,7 +119,7 @@ const Servicio =()=>{
                         </Parrafo>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={imagen3} alt="imagen6"/>
                     </li>
                     <li>
                         <Subtitulo>
@@ -117,25 +133,22 @@ const Servicio =()=>{
                 </Lista>
                 <Lista>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={logo1} alt="logo1"/>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={logo2} alt="logo2"/>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={logo3} alt="logo3"/>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={logo4} alt="logo4"/>
                     </li>
                     <li>
-                        <Imagenes/>
+                        <Imagenes src={logo5} alt="logo5"/>
                     </li>
                     <li>
-                        <Imagenes/>
-                    </li>
-                    <li>
-                        <Imagenes/>
+                        <Imagenes src={logo6} alt="logo6"/>
                     </li>
                 </Lista>
             </Contenedor>
@@ -151,28 +164,45 @@ const Servicio =()=>{
                 <Lista>
                     <li>
                         <Contenedor>
-                            <Imagenes/>
+                            <Imagenes src={icono1} alt="icono1"/>
                             <Parrafo>
+                                El servicio en este taller de motocicletas <br/>
+                                es excepcional! Llevo mi moto allí desde<br/>
+                                hace años y nunca me han decepcionado.<br/>
+                                Siempre son rápidos, amables y tienen precios<br/>
+                                justos.
                             </Parrafo>
                             <Subtitulo>
+                                María123
                             </Subtitulo>
                         </Contenedor>
                     </li>
                     <li>
                         <Contenedor>
-                            <Imagenes/>
+                            <Imagenes src={icono2} alt="icono2"/>
                             <Parrafo>
+                                Mi experiencia en este taller ha sido <br/>
+                                mixta. El personal es amable, y han<br/>
+                                realizado un buen trabajo en algunas ocasiones.<br/>
+                                Sin embargo, en otras ocasiones he tenido<br/>
+                                problemas con la duración de las reparaciones.
                             </Parrafo>
                             <Subtitulo>
+                                JuanMoto
                             </Subtitulo>
                         </Contenedor>
                     </li>
                     <li>
                         <Contenedor>
-                            <Imagenes/>
+                            <Imagenes src={icono3} alt="icono3"/>
                             <Parrafo>
+                                No puedo recomendar este taller en absoluto. <br/>
+                                Lleve mi moto para una reparación, <br/>
+                                y después de esperar semanas, me entregaron<br/>
+                                la moto con el mismo problema.
                             </Parrafo>
                             <Subtitulo>
+                                Descontento78
                             </Subtitulo>
                         </Contenedor>
                     </li>
@@ -180,8 +210,10 @@ const Servicio =()=>{
                 <Lista>
                     <li>
                         <Titulo>
+                            Envíanos un mensaje
                         </Titulo>
                         <Parrafo>
+                            Escríbenos tus inquietudes o problemas
                         </Parrafo>
                         <form>
                         <Lista>
@@ -201,7 +233,7 @@ const Servicio =()=>{
                         </form>
                     </li>
                     <li>
-
+                        <Imagenes src={final} alt="imagen7"/>
                     </li>
                 </Lista>
             </Contenedor>
@@ -209,6 +241,7 @@ const Servicio =()=>{
     
     )
 }
+
 export default Servicio;
 
 const Contenedor=apariencia.section`
