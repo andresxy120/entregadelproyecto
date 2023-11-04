@@ -19,19 +19,11 @@ const Productos=()=>{
         // Agrega más productos aquí
       ];
     return(
-        <div>
-      <h1>Productos Disponibles</h1>
-      <div className="productos-list">
-        {productos.map((producto) => (
-          <div className="producto" key={producto.id}>
-            <img src={producto.imagen} alt={producto.nombre} />
-            <h2>{producto.nombre}</h2>
-            <p>Precio: ${producto.precio.toFixed(2)}</p>
-            <button>Agregar al Carrito</button>
-          </div>
-        ))}
-      </div>
-    </div>
+        <Contenerdor>
+          <Asaider>
+            
+          </Asaider>
+        </Contenerdor>
     )
 }
 export default Productos;
