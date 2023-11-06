@@ -25,4 +25,3 @@ const Subtitulo=stilos.h2`
 `
 const Boton=stilos.button`
 `
-const 
