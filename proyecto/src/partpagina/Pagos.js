@@ -43,6 +43,8 @@ const Pagos=()=>{
         </Contenedor>
     );
 };
+
+export default Pagos;
 const Contenedor=stylos.section`
 `
 const Lista=stylos.ul`
