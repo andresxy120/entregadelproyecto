@@ -20,6 +20,19 @@ const Productos=()=>{
       ];
     return(
       <Contenedor>
+        <Contenedor>
+        <nav>
+                <ul>
+                    <li><button class="">Todos los productos</button></li>
+                    <li><button>Motor</button></li>
+                    <li><button>Luces</button></li>
+                    <li><button>Accesorios</button></li>
+                    <li><button>Exterior</button></li>
+                    <li><button>Diseño</button></li>
+                    <li><a href="./carrito.html"></a><span class="numerito">0</span></li>
+                </ul>
+            </nav>
+        </Contenedor>
       <Titulo>Productos Disponibles</Titulo>
       <Contenedor className="productos-list">
         {productos.map((producto) => (
