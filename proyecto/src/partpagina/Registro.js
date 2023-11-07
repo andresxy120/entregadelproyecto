@@ -20,7 +20,7 @@ const Registro=()=>{
         </Contenedor>
     );
 }
-
+export default Registro;
 const Contenedor=stylos.section`
 `
 const Lista=stylos.ul`
