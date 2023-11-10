@@ -7,7 +7,7 @@ import Servicio from './partpagina/Servicio';
 function App() {
   return (
     <section className="App">
-      <Perfil/>
+      <Productos/>
     </section>
   );
 }
