@@ -1,6 +1,6 @@
 import React from "react";
 import stilos from "styled-components";
-
+import { producid } from "./Productos";
 const Carrito =()=>{
     return(
         <Contenedor>
