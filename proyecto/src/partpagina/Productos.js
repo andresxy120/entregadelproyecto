@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import stilos from "styled-components";
 import producto1 from './imgproducto/producto1.jpg'
 import producto2 from './imgproducto/producto2.jpg'
@@ -25,8 +25,16 @@ const producid = [
   },
   // Agrega más productos aquí
 ];
+const setTotal=inicial=>{
+  const[acumular, setTotal]=useState(inicial)
+  const sumar=(precio)=>{
+    setTotal( acumular + precio)
+  }
+  return{ acumular, sumar }
+}
 
 const Productos = () => {
+  const{ acumular , sumar}=useState(0)
   return (
     <Contenedor>
       <Contenedor>
@@ -38,11 +46,12 @@ const Productos = () => {
             <li><Boton id="accesorios">Accesorios</Boton></li>
             <li><Boton id="exterior">Exterior</Boton></li>
             <li><Boton id="diseño">Diseño</Boton></li>
-            <li><Link to="/Carrito">carrito</Link></li>
+            <li><Boton><Link to="/Carrito">carrito</Link></Boton></li>
           </Lista>
         </nav>
         <Outlet/>
       </Contenedor>
+      <Titulo>{acumular}</Titulo>
       <Titulo>Productos Disponibles</Titulo>
       <Contenedor className="productos-list">
         {producid.map((producto) => (
@@ -50,7 +59,7 @@ const Productos = () => {
             <Imagenes src={producto.imagen} alt={producto.categorias.nombre} />
             <Subtitulo>{producto.titulo}</Subtitulo>
             <Parrafo>Precio: ${producto.precio.toFixed(2)}</Parrafo>
-            <Boton>Agregar al Carrito</Boton>
+            <Boton onClick={sumar(producto.precio)}>Agregar al Carrito</Boton>
           </Contenedor>
         ))}
       </Contenedor>
