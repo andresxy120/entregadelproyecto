@@ -1,25 +1,30 @@
 import React from "react";
 import logo from './imagenes/BlackMotorcycle.png'
 import stylos from 'styled-components'
+import { Link, Outlet } from "react-router-dom";
 const Header=()=>{
     return(
         <Seccion>
-            <Listas className="header">
-            <li><Imagen src={logo} alt="logo"/></li>
-            <li><a href="#">Inicio</a>
-                <a href="#">Servicio</a>
-                <a href="#">Productos</a>
-            </li>
-            </Listas>
+            <nav>
+            <Lista className="header">
+                <li><Imagen src={logo} alt="logo"/></li>
+                <li><Link to="/Inicio">Inicio</Link></li>
+                <li><Link to="/Servicio">Servicio</Link></li>
+                <li><Link to="/Productos">Productos</Link></li>
+            
+            </Lista>
+            </nav>
+            
+            <Outlet/>
         </Seccion>
-    )
+    );
 }
 export default Header
 
 const Seccion=stylos.section`
 
 `
-const Listas=stylos.ul`
+const Lista=stylos.ul`
     &.header{
         display: flex;
         justify-content: space-between;
