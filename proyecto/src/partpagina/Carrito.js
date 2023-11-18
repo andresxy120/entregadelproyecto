@@ -1,11 +1,20 @@
 import React from "react";
 import stilos from "styled-components";
-import { producid } from "./Productos";
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement } from './feauters/Counterslice';
 const Carrito =()=>{
+    const counter = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch();
     return(
         <Contenedor>
-            <Titulo>Carrito</Titulo>
-            <Parrafo>Tu carrito esta vacio</Parrafo>
+            <Contenedor>
+                <Titulo>Carrito: {counter}</Titulo>
+                <Boton onClick={() => dispatch(increment())}>Increment</Boton>
+                <Boton onClick={() => dispatch(decrement())}>Decrement</Boton>
+            </Contenedor>
+            <Contenedor>
+                
+            </Contenedor>
         </Contenedor>
     )
 
