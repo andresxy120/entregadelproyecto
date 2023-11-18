@@ -3,38 +3,49 @@ import stilos from "styled-components";
 import producto1 from './imgproducto/producto1.jpg'
 import producto2 from './imgproducto/producto2.jpg'
 import { Link, Outlet } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { addItemToCart } from './feauters/cartslice';
 
 const producid = [
   {
     titulo: "Producto 1",
     precio: 65.000,
     imagen: producto1,
-    categorias: {
-      id: "Motor",
-      nombre: "Motor"
-    }
+    id: 1,
+    nombre: "Motor"
   },
   {
     titulo: "Producto 2",
     precio: 80.000,
     imagen: producto2,
-    categorias: {
-      id: "Motor",
-      nombre: "Motor"
-    }
+    id: 2,
+    nombre: "Motor"
   },
   // Agrega más productos aquí
 ];
-const setTotal=inicial=>{
-  const[acumular, setTotal]=useState(inicial)
-  const sumar=(precio)=>{
-    setTotal( acumular + precio)
-  }
-  return{ acumular, sumar }
-}
+
 
 const Productos = () => {
-  const{ acumular , sumar}=useState(0)
+  const dispatch = useDispatch();
+  
+  const handleAddToCart = () => {
+    const Motor = {
+      unidad1:{
+        id:1,
+        titulo: "Producto 1",
+        precio: 65.000,
+        imagen: producto1,
+      },
+      unidad2:{
+        id: 2,
+        titulo: "Producto 2",
+        precio: 80.000,
+        imagen: producto2,
+      },
+    };
+    dispatch(addItemToCart(Motor));
+  };
+
   return (
     <Contenedor>
       <Contenedor>
@@ -51,15 +62,14 @@ const Productos = () => {
         </nav>
         <Outlet/>
       </Contenedor>
-      <Titulo>{acumular}</Titulo>
       <Titulo>Productos Disponibles</Titulo>
       <Contenedor className="productos-list">
         {producid.map((producto) => (
           <Contenedor className="producto" key={producto.categorias.id}>
-            <Imagenes src={producto.imagen} alt={producto.categorias.nombre} />
+            <Imagenes src={producto.imagen} alt="" />
             <Subtitulo>{producto.titulo}</Subtitulo>
             <Parrafo>Precio: ${producto.precio.toFixed(2)}</Parrafo>
-            <Boton onClick={sumar(producto.precio)}>Agregar al Carrito</Boton>
+            <Boton onClick={handleAddToCart}>Agregar al Carrito</Boton>
           </Contenedor>
         ))}
       </Contenedor>
@@ -67,7 +77,6 @@ const Productos = () => {
   );
 }
 
-export { producid };
 export default Productos;
 
 const Contenedor = stilos.section`
