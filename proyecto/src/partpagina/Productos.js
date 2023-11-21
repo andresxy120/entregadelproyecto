@@ -1,58 +1,56 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import stilos from "styled-components";
-import producto1 from './imgproducto/producto1.jpg'
-import producto2 from './imgproducto/producto2.jpg'
 import { Link, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
+import {addObjectToArray, increment, decrement, updateTotal} from './feauters/arraySlice'
 
 
-const producid = {
-  unidad1:{
-    titulo: "Producto 1",
-    precio: 65.000,
-    imagen: producto1,
-    id: 1,
-    nombre: "Motor"
-  },
-  unidad2:{
-    titulo: "Producto 2",
-    precio: 80.000,
-    imagen: producto2,
-    id: 2,
-    nombre: "Motor"
-  },
-  // Agrega más productos aquí
-};
+
 
 
 const Productos = () => {
-  return(
-    <Contenedor>
+  const Todos = useSelector((state) => state.cart.producto); 
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todos');
+  const dispatch = useDispatch();
+
+  const moveObject = (selectedId) => {
+    const selectedObject = Todos.find(producto => producto.id === selectedId);
+    if (selectedObject) {
+      dispatch(addObjectToArray(selectedObject));
+    }
+  };
+
+  const productosFiltrados = categoriaSeleccionada === 'todos' ? Todos : Todos.filter(producto => producto.categoria === categoriaSeleccionada);
+  return (
+    <Contenedor >
+      <Titulo>Productos Disponibles</Titulo>
+      <Contenedor className="principal">
       <Contenedor>
         <nav>
           <Lista>
-            <li><Boton className="">Todos los productos</Boton></li>
-            <li><Boton id="motor">Motor</Boton></li>
-            <li><Boton id="luces">Luces</Boton></li>
-            <li><Boton id="accesorios">Accesorios</Boton></li>
-            <li><Boton id="exterior">Exterior</Boton></li>
-            <li><Boton id="diseño">Diseño</Boton></li>
+            <li><Boton onClick={() => setCategoriaSeleccionada('todos')}>Todos</Boton></li>
+            <li><Boton onClick={() => setCategoriaSeleccionada('motor')}>Motor</Boton></li>
+            <li><Boton onClick={() => setCategoriaSeleccionada('accesorios')}>Accesorios</Boton></li>
+            <li><Boton onClick={() => setCategoriaSeleccionada('exterior')}>Exterior</Boton></li>
+            <li><Boton onClick={() => setCategoriaSeleccionada('diseño')}>Diseño</Boton></li>
             <li><Boton><Link to="/Carrito">carrito</Link></Boton></li>
           </Lista>
         </nav>
         <Outlet/>
       </Contenedor>
-      <Titulo>Productos Disponibles</Titulo>
+      
       <Contenedor className="productos-list">
-        {producid.map((producto) => (
-          <Contenedor className="producto" key={producto.categorias.id}>
-            <Imagenes src={producto.imagen} alt="" />
+        {productosFiltrados.map((producto) => (
+          <Contenedor className="producto" key={producto.id}>
+            <Imagenes className="producto" src={producto.imagen} alt="" />
             <Subtitulo>{producto.titulo}</Subtitulo>
-            <Parrafo>Precio: ${producto.precio.toFixed(2)}</Parrafo>
-            <Boton>Agregar al Carrito</Boton>
+            <Parrafo>Precio: ${producto.precio}</Parrafo>
+            <Boton onClick={()=>moveObject(producto.id)}>Agregar al Carrito</Boton>
           </Contenedor>
         ))}
       </Contenedor>
+     
+    </Contenedor>
     </Contenedor>
   );
 }
@@ -60,14 +58,26 @@ const Productos = () => {
 export default Productos;
 
 const Contenedor = stilos.section`
+    &.principal{
+      display: flex;
+      justify-content: center;
+    }
+    &.productos-list{
+      margin: 0 20px;
+    }
 `
 const Titulo = stilos.h1`
 `
 const Parrafo = stilos.p`
 `
 const Lista = stilos.ul`
+  list-style-type: none;
 `
 const Imagenes = stilos.img`
+    &.producto{
+      width: 200px;
+      height: 200px;
+    }
 `
 const Subtitulo = stilos.h2`
 `

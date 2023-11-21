@@ -17,15 +17,16 @@ import icono1 from './imgservicio/iconousua1.png';
 import icono2 from './imgservicio/iconousua2.png';
 import icono3 from './imgservicio/iconousua3.png';
 import final from './imgservicio/usuariofinal.jpg';
+import Registro from './Registro';
 
 const Servicio = () => {
   return (
     <ContenedorPrincipal className="principal">
-      <Contenedor>
+      <Contenedor className="introduccion">
         <Lista>
           <li>
-            <Titulo>Servicio complejo para su motocicleta</Titulo>
-            <Parrafo>
+            <Titulo className="introduccion">Servicio complejo para su motocicleta</Titulo>
+            <Parrafo className="introduccion">
               Nuestros asesores de motocicleta de fácil contacto le <br />
               explicarán cualquier mantenimiento o reparación <br />
               sugeridos. No tomarán ninguna medida a menos que las <br />
@@ -35,18 +36,18 @@ const Servicio = () => {
             </Parrafo>
           </li>
           <li>
-            <Imagenes src={imagene} alt="imagen1" />
+            <Imagenes className="introduccion" src={imagene} alt="imagen1" />
           </li>
         </Lista>
 
-        <Titulo>
+        <Titulo className="introduccion1">
           Una lista de verificación para preparar su motocicleta para un largo viaje por carretera
         </Titulo>
-        <Lista>
+        <Lista >
           <li>
-            <Imagenes src={mantener} alt="imagen2" />
-            <Subtitulo>Mantenimiento general</Subtitulo>
-            <Parrafo>
+            <Imagenes className="introcontenido" src={mantener} alt="imagen2" />
+            <Subtitulo className="introcontenido" >Mantenimiento general</Subtitulo>
+            <Parrafo className="introcontenido">
               -Verifica el manual del propietario de tu motocicleta para conocer los intervalos de
               <br /> mantenimiento recomendados y asegúrate de que todo esté al día.
               -Realiza un cambio de aceite y filtros si es necesario.
@@ -60,9 +61,9 @@ const Servicio = () => {
             </Parrafo>
           </li>
           <li>
-            <Imagenes src={seguridad} alt="imagen3" />
-            <Subtitulo>Seguridad y visibilidad</Subtitulo>
-            <Parrafo>
+            <Imagenes className="introcontenido" src={seguridad} alt="imagen3" />
+            <Subtitulo className="introcontenido" >Seguridad y visibilidad</Subtitulo>
+            <Parrafo className="introcontenido">
               -Asegúrate de que todas las luces, incluidos los faros, las luces <br />
               de freno y las luces direccionales, funcionen correctamente.
               -Limpia y ajusta los espejos retrovisores.
@@ -74,81 +75,87 @@ const Servicio = () => {
       </Contenedor>
 
       <Contenedor>
-        <Titulo>¿Por qué elegir nuestro servicio?</Titulo>
-        <Parrafo>
+        <Titulo className="centrocontenido">¿Por qué elegir nuestro servicio?</Titulo>
+        <Parrafo className="centrocontenido">
           La principal ventaja de la cooperación con el centro<br />
           de reparación de motocicleta es la ventajosa relación<br />
           calidad-precio.
         </Parrafo>
-        <Titulo>Reparacion de motocicleta de alta calidad</Titulo>
-        <Lista>
-          <li>
-            <Imagenes src={imagen1} alt="imagen4" />
-          </li>
-          <li>
+        <Titulo className="centrocontenido">Reparacion de motocicleta de alta calidad</Titulo>
+        <Lista className="centrocontenido">
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido" src={imagen1} alt="imagen4" />
+            <Contenedor className="centrocontenido">
             <Subtitulo>Reparación</Subtitulo>
             <Parrafo>
               La reparación de una motocicleta es un proceso<br />
               fundamental para mantener su seguridad, rendimiento y <br />
               durabilidad a lo largo del tiempo.
             </Parrafo>
-          </li>
-          <li>
-            <Imagenes src={imagen2} alt="imagen5" />
-          </li>
-          <li>
+            </Contenedor>
+            
+          </Li>
+          <Li className="centrocontenido1">
+            <Imagenes  className="centrocontenido" src={imagen2} alt="imagen5" />
+            <Contenedor className="centrocontenido">
             <Subtitulo>Cuidado de la motocicleta</Subtitulo>
             <Parrafo>
               El cuidado adecuado de la motocicleta es esencial<br />
               para garantizar su durabilidad, rendimiento y seguridad,<br />
               y para prevenir problemas mecánicos, eléctricos o de<br />
               otro tipo
-            </Parrafo>
-          </li>
-          <li>
-            <Imagenes src={imagen3} alt="imagen6" />
-          </li>
-          <li>
+            </Parrafo></Contenedor>
+            
+          </Li>
+          
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido" src={imagen3} alt="imagen6" />
+            <Contenedor className="centrocontenido">
             <Subtitulo>Calidad</Subtitulo>
             <Parrafo>
               nivel de rendimiento, grado de perfección o cumplimiento<br />
               de estándares específicos que se aplican a un servicio.
             </Parrafo>
-          </li>
+            </Contenedor>
+            
+          </Li>
         </Lista>
+        <Contenedor className="centrocontenido1">
         <Lista>
-          <li>
-            <Imagenes src={logo1} alt="logo1" />
-          </li>
-          <li>
-            <Imagenes src={logo2} alt="logo2" />
-          </li>
-          <li>
-            <Imagenes src={logo3} alt="logo3" />
-          </li>
-          <li>
-            <Imagenes src={logo4} alt="logo4" />
-          </li>
-          <li>
-            <Imagenes src={logo5} alt="logo5" />
-          </li>
-          <li>
-            <Imagenes src={logo6} alt="logo6" />
-          </li>
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido1" src={logo1} alt="logo1" />
+          </Li>
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido1" src={logo2} alt="logo2" />
+          </Li>
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido1" src={logo3} alt="logo3" />
+          </Li>
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido1" src={logo4} alt="logo4" />
+          </Li>
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido1" src={logo5} alt="logo5" />
+          </Li>
+          <Li className="centrocontenido">
+            <Imagenes className="centrocontenido1" src={logo6} alt="logo6" />
+          </Li>
         </Lista>
+        </Contenedor>
+        
       </Contenedor>
 
       <Contenedor>
-        <Titulo>Lo que dicen los clientes</Titulo>
-        <Parrafo>
+        <Titulo className="final">Lo que dicen los clientes</Titulo>
+        <Parrafo className="final">
           Valoramos enormemente las relaciones sólidas y hemos visto los beneficios que<br />
           aportan a nuestro negocio. Los comentarios de los clientes son vitales para<br />
           ayudarnos a hacerlo bien.
         </Parrafo>
-        <Lista>
+        <Lista className="final">
           <li>
-            <Contenedor>
-              <Imagenes src={icono1} alt="icono1" />
+            <Contenedor className="final">
+              <Imagenes className="final" src={icono1} alt="icono1" />
               <Parrafo>
                 El servicio en este taller de motocicletas <br />
                 es excepcional! Llevo mi moto allí desde<br />
@@ -160,8 +167,8 @@ const Servicio = () => {
             </Contenedor>
           </li>
           <li>
-            <Contenedor>
-              <Imagenes src={icono2} alt="icono2" />
+            <Contenedor className="final">
+              <Imagenes className="final" src={icono2} alt="icono2" />
               <Parrafo>
                 Mi experiencia en este taller ha sido <br />
                 mixta. El personal es amable, y han<br />
@@ -173,8 +180,8 @@ const Servicio = () => {
             </Contenedor>
           </li>
           <li>
-            <Contenedor>
-              <Imagenes src={icono3} alt="icono3" />
+            <Contenedor className="final">
+              <Imagenes className="final" src={icono3} alt="icono3" />
               <Parrafo>
                 No puedo recomendar este taller en absoluto. <br />
                 Llevé mi moto para una reparación, <br />
@@ -185,31 +192,19 @@ const Servicio = () => {
             </Contenedor>
           </li>
         </Lista>
+        <Contenedor className="final1">
         <Lista>
           <li>
-            <Titulo>Envíanos un mensaje</Titulo>
-            <Parrafo>Escríbenos tus inquietudes o problemas</Parrafo>
-            <form>
-              <Lista>
-                <li>
-                  <input type="text" placeholder="Ingrese su nombre" />
-                </li>
-                <li>
-                  <input type="text" placeholder="Ingrese su email" />
-                </li>
-                <li>
-                  <input type="text" placeholder="Ingrese tu mensaje" />
-                </li>
-                <li>
-                  <input type="submit" />
-                </li>
-              </Lista>
-            </form>
+            <Titulo className="final">Envíanos un mensaje</Titulo>
+            <Parrafo className="final">Escríbenos tus inquietudes o problemas</Parrafo>
+            <Registro/>
           </li>
           <li>
-            <Imagenes src={final} alt="imagen7" />
+            <Imagenes className="final1"src={final} alt="imagen7" />
           </li>
         </Lista>
+        </Contenedor>
+        
       </Contenedor>
     </ContenedorPrincipal>
   );
@@ -217,10 +212,105 @@ const Servicio = () => {
 
 export default Servicio;
 
-const ContenedorPrincipal = apariencia.section``;
-const Contenedor = apariencia.section``;
-const Titulo = apariencia.h1``;
-const Parrafo = apariencia.p``;
-const Lista = apariencia.ul``;
-const Imagenes = apariencia.img``;
+const ContenedorPrincipal = apariencia.section`
+ 
+`;
+const Contenedor = apariencia.section`
+  &.final{
+    background-color: #f9cd94;
+    }
+
+    &.centrocontenido{
+      width: 400px;
+      height: 300px;
+      background-color: #cdcdcd;
+    }
+    &.introduccion{
+      background-color: #fc8600;
+    }
+    &.centrocontenido1{
+      background-color: #ffffff;
+    }
+    &.final1{
+      background-color: #f9cd94;
+      }
+    `;
+const Titulo = apariencia.h1`
+  &.introduccion{
+    font-size: 60px;
+}
+  &.introduccion1{
+    font-size: 40px;
+  }
+  &.centrocontenido{
+    font-size: 40px;
+  }
+  &.final{
+    color: #ffffff; 
+    font-size: 40px;
+  }
+  
+`;
+const Parrafo = apariencia.p`
+  &.introduccion{
+    font-size: 20px;
+  }
+  &.centrocontenido{
+    font-size: 20px;
+  }
+  &.final{
+    color: #ffffff; 
+    font-size: 20px;
+  }
+`;
+const Lista = apariencia.ul`
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-between;
+  margin: 90px 0;
+  &.final{
+    justify-content: space-evenly;
+  }
+  &.centrocontenido{
+    justify-content: center;
+  }
+  
+`;
+const Li = apariencia.li`
+  display: flex;
+  &.centrocontenido{
+    flex-direction: column;
+  }
+  &.centrocontenido1{
+    flex-direction: column-reverse;
+  }
+
+`
+const Imagenes = apariencia.img`
+  &.introduccion{
+    width: 100%;
+    height: 100%;
+  }
+  &.introcontenido{
+    width: 500px;
+    height: 500px;
+  }
+  &.centrocontenido{
+    width: 400px;
+    height: 300px;
+  }
+  &.centrocontenido1{
+    width: 100px;
+    height: 100px;
+  }
+  &.final{
+    width: 200px;
+    height: 200px;
+  }
+  &.final1{
+    width: 900px;
+    height: 700px;
+  }
+`;
 const Subtitulo = apariencia.h2``;

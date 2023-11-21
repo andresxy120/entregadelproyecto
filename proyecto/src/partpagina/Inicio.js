@@ -28,50 +28,56 @@ const Inicio=()=>{
             </Contenedor>
             <Contenedor className="introduccion">
                 <Listas>
-                <li><Imagenes className="imgportada" src={imgportada} alt=""/></li>
-                <li><Titulos>Hemos ampliado <br/>nuestros <br/><b>servicios para</b><br/><b>incluir</b> <br/> almacenamiento <br/>de <br/>motocicletas</Titulos></li>
-                <li><Imagenes className="imgportada1" src={imgportada1} alt=""/>
+                <li><Imagenes className="introduccion" src={imgportada} alt=""/></li>
+                <li><Titulos className="introduccion">Hemos ampliado <br/>nuestros <br/><b>servicios para</b><br/><b>incluir</b> <br/> almacenamiento <br/>de <br/>motocicletas</Titulos></li>
+                <li><Imagenes className="introduccion1" src={imgportada1} alt=""/>
                 <p>Hace casi 20 años, nos dimos cuenta de que no <br/>existía una  asistencia en carretera segura <br/> diseñada únicamente para motocicletas. Después <br/> de haber visto demasiadas bicicletas encadenadas, <br/> peligrosamente, a las barras de remolque de las <br/> grúas regulares, y una extensa investigación de <br/>mercado, comenzamos nuestra empresa ...</p></li>
                 </Listas>
             </Contenedor>
             <Contenedor className="contenido">
-                <Listas>
-                    <li>
+                <Listas className="contenido">
+                    <Li>
                     <Titulos className="contenido"><b>Servicios</b> de coches de alquiler </Titulos>
                     <Parrafo className="portada">Encuentre la mejor tarifa de coche de alquiler <br/> posible. Compare tarifas en todo el mundo y ahorre hasta un 60% en ofertas de más de 1.053 empresas de alquiler de coches.</Parrafo>
-                    </li>
-                    <li><Imagenes className="iconos" src={icono1} alt="icono1"/>
+                    </Li>
+                    <Li><Imagenes className="iconos" src={icono1} alt="icono1"/>
                     <Subtitulo className="contenido">UBICACION</Subtitulo>
-                    </li>
-                    <li><Imagenes className="iconos" src={icono2} alt="icono2"/>
+                    </Li>
+                    <Li><Imagenes className="iconos" src={icono2} alt="icono2"/>
                     <Subtitulo className="contenido">20+MOTOCICLETAS</Subtitulo>
-                    </li>
-                    <li>
+                    </Li>
+                    <Li>
                     <Imagenes className="iconos" src={icono3} alt="icono3"/>
                     <Subtitulo className="contenido">USUARIOS FELICES</Subtitulo>
-                    </li>
+                    </Li>
                 </Listas>
             </Contenedor>
             <Contenedor className="foto">
-                <section><Imagenes className="foto1" src={foto1} alt="foto1"/></section>
-                <section><Imagenes className="foto2" src={foto2} alt="foto2"/></section>
-                <section><Imagenes className="foto3" src={foto3} alt="foto3"/></section>
+                <Listas>
+                    <Li className="fotoscentral">
+                    <Imagenes className="Foto1" src={foto1} alt="foto1"/>
+                    </Li>
+                    <Li className="fotoscentral">
+                    <Imagenes className="Foto" src={foto2} alt="foto2"/>
+                    <Imagenes className="Foto" src={foto3} alt="foto3"/>
+                    </Li>
+                </Listas>
             </Contenedor>
             <Contenedor className="galeria">
                 <h1>Nuestra <b>Galería</b></h1>
-                <Listas>
-                    <li><img src={galeria1} alt="galeria1"/></li>
-                    <li><img src={galeria2} alt="galeria2"/></li>
-                    <li><img src={galeria3} alt="galeria3"/></li>
+                <Listas className="centrar">
+                    <li><Imagenes className="galeria" src={galeria1} alt="galeria1"/></li>
+                    <li><Imagenes className="galeria" src={galeria2} alt="galeria2"/></li>
+                    <li><Imagenes className="galeria" src={galeria3} alt="galeria3"/></li>
                 </Listas>
-                <Listas>
-                    <li><img src={galeria4} alt="galeria4"/></li>
-                    <li><img src={galeria5} alt="galeria5"/></li>
-                    <li><img src={galeria6} alt="galeria6"/></li>
+                <Listas className="centrar">
+                    <li><Imagenes className="galeria" src={galeria4} alt="galeria4"/></li>
+                    <li><Imagenes className="galeria" src={galeria5} alt="galeria5"/></li>
+                    <li><Imagenes className="galeria" src={galeria6} alt="galeria6"/></li>
                 </Listas>
                 <button>aprende mas</button>
             </Contenedor>
-            <Contenedor>
+            <Contenedor className="iconos">
                 <h1>Contáctenos</h1>
                 <Listas>
                     <li><Imagenes className="iconos" src={icono4} alt="icono4"/>
@@ -108,6 +114,35 @@ const Contenedor = styled.section`
     &.contenido{
         background-color: #000000;
     }
+    &.ladoizquierda{
+        display: flex;
+        justify-content: flex-start;
+        margin: 0; 
+        padding: 0;
+    }
+    &.ladoderecho{
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        padding: 0;
+        margin: 0; 
+        
+    }
+    &.foto{
+        flex-direction: row;
+    }
+    &.galeria{
+        margin:0;
+        padding 0;
+    }
+    &.centrar{
+        margin:0;
+        padding 0;
+    }
+    &.iconos{
+        background-color: #fc8600;
+    }
+   
 `
 const Titulos=styled.h1`
     &.portada{
@@ -117,6 +152,10 @@ const Titulos=styled.h1`
     &.contenido{
         font-size: 40px;
         color: #FFFFFF;
+        text-align: left;
+    }
+    &.introduccion{
+        font-size: 30px;
     }
 `
 const Subtitulo=styled.h2`
@@ -129,6 +168,7 @@ const Parrafo=styled.p`
     &.portada{
         color: #FFFFFF;
         font-size: 25px;
+        text-align: left;
     }
     
 `
@@ -137,35 +177,42 @@ const Listas=styled.ul
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    
-
-    
+    &.contenido{
+        align-items: center;
+    }
     
 `
+const Li=styled.li`
+    margin:10px;
+    &.fotoscentral{
+        margin:0;
+        padding 0;
+    }
+`
 const Imagenes=styled.img`
-    &.imgportada{
+    &.introduccion{
         width: 300px;
         height: 500px;
     }
-    &.imgportada1{
-        width: 300px;
+    &.introduccion1{
+        width: 400px;
         height: 300px;
     }
-    &.foto1{
-        width: 300px;
-        height: 300px;
+    &.Foto1{
+        width: 800px;
+        height: 1000px;
     }
-    &.foto2{
-        width: 300px;
-        height: 300px;
-    }
-    &.foto3{
-        width: 300px;
-        height: 300px;
+    &.Foto{
+        width: 800px;
+        height: 500px;
     }
     &.iconos{
         width: 90px;
         height: 90px;
+    }
+    &.galeria{
+        width: 500px;
+        height: 500px;
     }
 `
  
