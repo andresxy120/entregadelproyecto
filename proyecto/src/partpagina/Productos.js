@@ -22,7 +22,7 @@ const Productos = () => {
 
   const productosFiltrados = categoriaSeleccionada === 'todos' ? Todos : Todos.filter(producto => producto.categoria === categoriaSeleccionada);
   return (
-    <Contenedor >
+    <Contenedor className="principal1">
       <Titulo>Productos Disponibles</Titulo>
       <Contenedor className="principal">
       <Contenedor>
@@ -33,7 +33,7 @@ const Productos = () => {
             <li><Boton onClick={() => setCategoriaSeleccionada('accesorios')}>Accesorios</Boton></li>
             <li><Boton onClick={() => setCategoriaSeleccionada('exterior')}>Exterior</Boton></li>
             <li><Boton onClick={() => setCategoriaSeleccionada('diseño')}>Diseño</Boton></li>
-            <li><Boton><Link to="/Carrito">carrito</Link></Boton></li>
+            <li><Boton><Link1 to="/Carrito">carrito</Link1></Boton></li>
           </Lista>
         </nav>
         <Outlet/>
@@ -65,6 +65,9 @@ const Contenedor = stilos.section`
     &.productos-list{
       margin: 0 20px;
     }
+    &.principal1{
+      background-color: #ffdbad;
+    }
 `
 const Titulo = stilos.h1`
 `
@@ -82,4 +85,17 @@ const Imagenes = stilos.img`
 const Subtitulo = stilos.h2`
 `
 const Boton = stilos.button`
+  width: 100px;
+  height: 50px; 
+  padding: 0; 
+  text-align: center;
+  background-color: #fc8600;
+  border: none;
+  font-weight: bold;
 `
+const Link1 = stilos(Link)
+ `
+    text-decoration: none;
+    color: #000000;
+ `
+
