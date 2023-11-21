@@ -12,9 +12,6 @@ const Header=()=>{
                 <li><Link1 to="/Inicio">Inicio</Link1></li>
                 <li><Link1 to="/Servicio">Servicio</Link1></li>
                 <li><Link1 to="/Productos">Productos</Link1></li>
-                <li><Link1 to="/Registrar">Registrar</Link1></li>
-                <li><Link1 to="/Noticias">Noticias</Link1></li>
-                <li><Link1 to="/Perfil">Perfil</Link1></li>
                 <li><Link1 to="/Pagos">Pagos</Link1></li>
             </Lista>
             </nav>
