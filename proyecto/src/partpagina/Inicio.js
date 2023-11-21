@@ -108,6 +108,8 @@ const Inicio=()=>{
 export default Inicio;
 
 const Contenedor = styled.section`
+    
+
     &.portada{
         margin: 40px 0;
         background-image: url(${fondo});
@@ -150,7 +152,10 @@ const Contenedor = styled.section`
    
 `
 const Titulos=styled.h1`
-    
+    &.portada{
+        font-size: 70px;
+        color: #FFFFFF;
+    }
     &.contenido{
         font-size: 40px;
         color: #FFFFFF;
@@ -167,7 +172,11 @@ const Subtitulo=styled.h2`
     }
 `
 const Parrafo=styled.p`
-    
+    &.portada{
+        color: #FFFFFF;
+        font-size: 25px;
+        text-align: center;
+    }
 `
 const Listas=styled.ul
 `   
