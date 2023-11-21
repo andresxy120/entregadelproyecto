@@ -1,6 +1,7 @@
 import React from "react";
 import stilos from "styled-components";
 import { useSelector, useDispatch } from 'react-redux';
+import { Link, Outlet } from "react-router-dom";
 import { addObjectToArray, increment, decrement,updateTotal,eliminarProducto } from './feauters/arraySlice';
 
   const Carrito = () => {
@@ -42,7 +43,8 @@ import { addObjectToArray, increment, decrement,updateTotal,eliminarProducto } f
         ))}
         <Contenedor>
           <Parrafo>Total de la compra: ${sumaTotales}</Parrafo>
-          <Boton>Pagar</Boton>
+          <Boton><Link1 to="/Pagos">Pagos</Link1></Boton>
+          <Outlet/>
         </Contenedor>
       </Contenedor>
     );
@@ -72,4 +74,16 @@ const Imagenes=stilos.img`
 const Subtitulo=stilos.h2`
 `
 const Boton=stilos.button`
+  width: 100px;
+  height: 50px; 
+  padding: 0; 
+  text-align: center;
+  background-color: #fc8600;
+  border: none;
+  font-weight: bold;
 `
+const Link1 = stilos(Link)
+ `
+    text-decoration: none;
+    color: #000000;
+ `
