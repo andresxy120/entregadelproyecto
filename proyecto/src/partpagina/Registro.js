@@ -38,7 +38,7 @@ const Registro=()=>{
           </Li>
           
           <Li>
-            <Input className="opinion" type="text" name="opinion" placeholder="Ingrese tus inquietudes o sugerencias" />
+            <Textarea className="opinion" name="opinion" placeholder="Escribe tu opinión aquí..." required></Textarea>
           </Li>
           <Li className="opinion">
             <Boton type="submit">Enviar</Boton>
@@ -60,10 +60,7 @@ const Lista=stylos.ul`
 `
 const Input = stylos.input`
   padding: 8px 60px;
-  &.opinion{
-    padding: 60px;
-    text-align: left;
-  }
+  
 `
 const Li = stylos.li`
   
@@ -81,4 +78,11 @@ const Boton = stylos.button`
   border: none;
   font-weight: bold;
 `
+const Textarea=stylos.textarea`
+  &.opinion{
+    padding: 60px;
+    text-align: left;
+  }
+`
+
 
