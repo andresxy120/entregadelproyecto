@@ -1,6 +1,6 @@
 import React from "react";
 import apariencia from "styled-components";
-
+import { Link, Outlet } from "react-router-dom";
 import imagene from './imgservicio/tecnico.jpg';
 import seguridad from './imgservicio/seguridad.jpg';
 import mantener from './imgservicio/mantenimiento.jpg';
@@ -120,6 +120,8 @@ const Servicio = () => {
             
           </Li>
         </Lista>
+        <Boton><Link1 to="/Perfil">Perfil de nuestro Equipo</Link1></Boton>
+        <Outlet/>
         <Contenedor className="centrocontenido1">
         <Lista>
           <Li className="centrocontenido">
@@ -314,3 +316,18 @@ const Imagenes = apariencia.img`
   }
 `;
 const Subtitulo = apariencia.h2``;
+const Boton=apariencia.button`
+    width: 300px;
+    height: 70px; 
+    padding: 0; 
+    text-align: center;
+    background-color: #fc8600;
+    border: none;
+    font-weight: bold;
+`
+
+ const Link1 = apariencia(Link)
+ `
+    text-decoration: none;
+    color: #000000;
+ `
