@@ -18,6 +18,8 @@ import galeria6 from './imagenes/galeria 6.jpg'
 import icono4 from './imagenes/hablar-burbuja.png'
 import icono5 from './imagenes/llamada-telefonica.png'
 import icono6 from './imagenes/correo-electronico.png'
+import { Link, Outlet } from "react-router-dom";
+import "./Inicio.css";
 const Inicio=()=>{
     return(
        
@@ -75,7 +77,10 @@ const Inicio=()=>{
                     <li><Imagenes className="galeria" src={galeria5} alt="galeria5"/></li>
                     <li><Imagenes className="galeria" src={galeria6} alt="galeria6"/></li>
                 </Listas>
-                <button>aprende mas</button>
+                
+                <Boton><Link1 to="/Noticias">Noticias</Link1></Boton>
+                
+                <Outlet/>
             </Contenedor>
             <Contenedor className="iconos">
                 <h1>Contáctenos</h1>
@@ -145,10 +150,7 @@ const Contenedor = styled.section`
    
 `
 const Titulos=styled.h1`
-    &.portada{
-        font-size: 70px;
-        color: #FFFFFF;
-    }
+    
     &.contenido{
         font-size: 40px;
         color: #FFFFFF;
@@ -165,11 +167,6 @@ const Subtitulo=styled.h2`
     }
 `
 const Parrafo=styled.p`
-    &.portada{
-        color: #FFFFFF;
-        font-size: 25px;
-        text-align: left;
-    }
     
 `
 const Listas=styled.ul
@@ -215,4 +212,18 @@ const Imagenes=styled.img`
         height: 500px;
     }
 `
- 
+ const Boton=styled.button`
+    width: 300px;
+    height: 70px; 
+    padding: 0; 
+    text-align: center;
+    background-color: #fc8600;
+    border: none;
+    font-weight: bold;
+    
+ `
+ const Link1 =styled(Link)`
+    text-decoration: none;
+    color: #000000;
+ `
+
